@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs }@inputs:
+  outputs = { self, nixpkgs, home-manager, illogical-flake }@inputs:
   {
     nixosConfigurations.six = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -32,7 +32,6 @@
         {
           programs.illogical-impulse.enable = true;
         }
-
       ];
     };
   };
