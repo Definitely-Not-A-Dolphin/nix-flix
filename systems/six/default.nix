@@ -2,6 +2,7 @@
 {
   imports = [
     ./networking.nix
+    ./hardware-configuration.nix
 
     ../../modules/nixos/display
     ../../modules/nixos/locale.nix
