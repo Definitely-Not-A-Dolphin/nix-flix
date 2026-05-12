@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  networking.networkmanager.enable = true;
-  networking.hostName = "six";
+  networking = {
+    networkmanager.enable = true;
+    hostName = "six";
+  };
 }

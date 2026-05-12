@@ -15,24 +15,31 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, illogical-flake }@inputs:
-  {
-    nixosConfigurations.six = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      illogical-flake,
+    }@inputs:
+    {
+      nixosConfigurations.six = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
 
-      pkgs = import inputs.nixpkgs { system = "x86_64-linux";
-        config = {
-          allowUnfree = true;
+        pkgs = import inputs.nixpkgs {
+          system = "x86_64-linux";
+          config = {
+            allowUnfree = true;
+          };
         };
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./systems/six
+          inputs.illogical-flake.homeManagerModules.default
+          {
+            programs.illogical-impulse.enable = true;
+          }
+        ];
       };
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./systems/six
-        inputs.illogical-flake.homeManagerModules.default
-        {
-          programs.illogical-impulse.enable = true;
-        }
-      ];
     };
-  };
 }
