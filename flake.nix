@@ -18,7 +18,7 @@
   outputs =
     inputs@{ self, nixpkgs, ... }:
     {
-      nixosConfigurations.awesomebox = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.six = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           # ... other modules
