@@ -13,7 +13,9 @@
   home-manager.users.killioiden =
     { ... }:
     {
-      home.packages = [ ];
-      home.stateVersion = "25.11";
+      home = {
+        packages = [ ];
+        stateVersion = "25.11";
+      };
     };
 }

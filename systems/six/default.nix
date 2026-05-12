@@ -9,6 +9,7 @@
     ../../modules/nixos/fonts.nix
 
     ../../users/killioiden
+    <home-manager/nixos>
   ];
 
   environment.systemPackages = with pkgs; [
@@ -42,12 +43,15 @@
   services = {
     geoclue2.enable = true;
     upower.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
+
+  hardware.bluetooth.enable = true;
 
   system.stateVersion = "25.11";
 }
