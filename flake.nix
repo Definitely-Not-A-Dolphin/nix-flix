@@ -19,6 +19,15 @@
     inputs@{ self, nixpkgs, ... }:
     {
       nixosConfigurations.six = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        pkgs = import inputs.nixpkgs {
+          system = "x86_64-linux";
+          config = {
+            allowUnfree = true;
+          };
+        };
+
         specialArgs = { inherit inputs; };
         modules = [
           # ... other modules
