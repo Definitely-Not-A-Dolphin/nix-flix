@@ -9,7 +9,7 @@
     ../../modules/nixos/fonts.nix
 
     ../../users/killioiden
-    <home-manager/nixos>
+    #<home-manager/nixos>
   ];
 
   environment.systemPackages = with pkgs; [
@@ -40,18 +40,38 @@
     zip
   ];
 
-  services = {
-    geoclue2.enable = true;
-    upower.enable = true;
-    power-profiles-daemon.enable = true;
-  };
-
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
 
   hardware.bluetooth.enable = true;
+
+  services = {
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
+    # Configure keymap in X11
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+    geoclue2.enable = true;
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
+  };
+
+  programs = {
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
+    fish.enable = true;
+  };
 
   system.stateVersion = "25.11";
 }
