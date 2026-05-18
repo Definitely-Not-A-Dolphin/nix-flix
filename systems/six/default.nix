@@ -3,6 +3,7 @@
   imports = [
     ./networking.nix
     ./hardware-configuration.nix
+    ./fonts.nix
 
     ../../modules/nixos/display
     ../../modules/nixos/locale.nix
@@ -65,11 +66,7 @@
   };
 
   programs = {
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-      xwayland.enable = true;
-    };
+    niri.enable = true;
     fish.enable = true;
   };
 
