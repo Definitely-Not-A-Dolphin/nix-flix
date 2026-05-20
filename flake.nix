@@ -8,24 +8,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # noctalia = {
-    #   url = "github:noctalia-dev/noctalia-shell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs =
-    inputs@{ self, nixpkgs, ... }:
+    inputs@{ nixpkgs, ... }:
     {
       nixosConfigurations.six = nixpkgs.lib.nixosSystem {
         modules = [
-          # ... other modules
-          ./systems/six
+          ./modules/default.nix
+          ./systems/core/default.nix
+          ./systems/six/default.nix
         ];
-
-        # Do I just configure nix here as if it was configuration.nix
-        system = "x86_64-linux";
 
         pkgs = import inputs.nixpkgs {
           system = "x86_64-linux";

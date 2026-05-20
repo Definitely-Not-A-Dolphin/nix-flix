@@ -5,9 +5,8 @@
     ./hardware-configuration.nix
     ./fonts.nix
 
-    ../../modules/nixos/display
-    ../../modules/nixos/locale.nix
-    ../../modules/nixos/fonts.nix
+    ../../modules/locale.nix
+    ../../modules/fonts.nix
 
     ../../users/killioiden
     #<home-manager/nixos>
@@ -24,7 +23,6 @@
     git
     gh
     home-manager
-    hyprland
     kitty
     nil
     nixd
@@ -32,12 +30,9 @@
     playerctl
     unzip
     upower
-    vesktop
     vim
-    wireplumber
     wget
     wl-clipboard
-    zed-editor
     zip
   ];
 
@@ -54,11 +49,6 @@
         enable = true;
         wayland.enable = true;
       };
-    };
-    # Configure keymap in X11
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
     };
     geoclue2.enable = true;
     upower.enable = true;

@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 {
+  #### om jezelf mee te doxxen
   time.timeZone = "Europe/Amsterdam";
 
-  i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
+    defaultLocale = "en_US.UTF-8";
     LC_ADDRESS = "nl_NL.UTF-8";
     LC_IDENTIFICATION = "nl_NL.UTF-8";
     LC_MEASUREMENT = "nl_NL.UTF-8";
