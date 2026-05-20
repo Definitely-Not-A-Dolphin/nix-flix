@@ -4,8 +4,8 @@
   #
   # Todo: import tree
   imports = [
+    ./locale.nix
     ./niri.nix
     ./sddm.nix
-    ./locale.nix
   ];
 }
