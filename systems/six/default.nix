@@ -5,8 +5,7 @@
     ./hardware-configuration.nix
     ./fonts.nix
 
-    ../../modules/locale.nix
-    ../../modules/fonts.nix
+    ../../modules/default.nix
 
     ../../users/killioiden
     #<home-manager/nixos>
@@ -19,6 +18,7 @@
     firefox
     fish
     fontconfig
+    fuzzel
     geoclue2
     git
     gh
@@ -30,9 +30,11 @@
     playerctl
     unzip
     upower
+    vesktop
     vim
     wget
     wl-clipboard
+    zed-editor
     zip
   ];
 
