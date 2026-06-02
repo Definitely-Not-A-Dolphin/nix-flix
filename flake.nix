@@ -24,7 +24,6 @@
     {
       nixosConfigurations.six = nixpkgs.lib.nixosSystem {
         modules = [
-          ./modules/default.nix
           ./systems/core/default.nix
           ./systems/six/default.nix
           inputs.home-manager.nixosModules.default
@@ -37,7 +36,7 @@
         #   };
         # };
 
-        extraSpecialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; };
       };
     };
 }
