@@ -16,7 +16,11 @@
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    inputs@{ self, nixpkgs, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
       nixosConfigurations.six = nixpkgs.lib.nixosSystem {
         modules = [
@@ -26,12 +30,12 @@
           inputs.home-manager.nixosModules.default
         ];
 
-        pkgs = import inputs.nixpkgs {
-          system = "x86_64-linux";
-          config = {
-            allowUnfree = true;
-          };
-        };
+        # pkgs = import inputs.nixpkgs {
+        #   system = "x86_64-linux";
+        #   config = {
+        #     allowUnfree = true;
+        #   };
+        # };
 
         extraSpecialArgs = { inherit inputs; };
       };
