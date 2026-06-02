@@ -5,7 +5,7 @@
   imports = [
     ./locale.nix
     ./niri.nix
-    ./noctalia.nix
+    #./noctalia.nix
     ./sddm.nix
   ];
 }

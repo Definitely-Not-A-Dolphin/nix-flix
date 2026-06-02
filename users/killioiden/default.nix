@@ -13,12 +13,12 @@
     shell = pkgs.fish;
   };
 
-  inputs.home-manager.users.killioiden =
-    { ... }:
-    {
-      home = {
-        packages = [ ];
-        stateVersion = "25.11";
-      };
-    };
+  # inputs.home-manager.users.killioiden =
+  #   { ... }:
+  #   {
+  #     home = {
+  #       packages = [ ];
+  #       stateVersion = "25.11";
+  #     };
+  #   };
 }

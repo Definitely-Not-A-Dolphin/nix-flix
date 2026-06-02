@@ -12,8 +12,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    bluetui
+    bambu-studio
     clang
     curl
+    deno
     fastfetch
     firefox
     fish
@@ -23,6 +26,7 @@
     git
     gh
     home-manager
+    hyprland
     kitty
     nil
     nixd

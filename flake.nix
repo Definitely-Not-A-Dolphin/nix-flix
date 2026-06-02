@@ -16,7 +16,7 @@
   };
 
   outputs =
-    inputs@{ nixpkgs, ... }:
+    inputs@{ nixpkgs, home-manager, ... }:
     {
       nixosConfigurations.six = nixpkgs.lib.nixosSystem {
         modules = [
