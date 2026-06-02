@@ -4,20 +4,25 @@
     ./networking.nix
     ./hardware-configuration.nix
 
-    ../../modules/nixos/display
-    ../../modules/nixos/locale.nix
-    ../../modules/nixos/fonts.nix
+    ../core/default.nix
 
-    ../../users/killioiden
+    ../../modules/nixos/default.nix
+    ../../modules/home-manager/default.nix
+
+    ../../users/killioiden/default.nix
   ];
 
   environment.systemPackages = with pkgs; [
+    bambu-studio
+    bluetui
     clang
     curl
+    deno
     fastfetch
     firefox
     fish
     fontconfig
+    fuzzel
     geoclue2
     git
     gh
@@ -32,21 +37,28 @@
     upower
     vesktop
     vim
-    wireplumber
     wget
     wl-clipboard
     zed-editor
     zip
   ];
 
-  services = {
-    geoclue2.enable = true;
-    upower.enable = true;
-  };
-
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
+  };
+
+  hardware.bluetooth.enable = true;
+
+  services = {
+    displayManager = {
+      sddm = {
+        wayland.enable = true;
+      };
+    };
+    geoclue2.enable = true;
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
   system.stateVersion = "25.11";

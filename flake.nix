@@ -9,22 +9,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    illogical-flake = {
-      url = "github:soymou/illogical-flake";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      illogical-flake,
-    }@inputs:
+    inputs@{ nixpkgs, home-manager, ... }:
     {
       nixosConfigurations.six = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        modules = [
+          ./modules/default.nix
+          ./systems/core/default.nix
+          ./systems/six/default.nix
+          inputs.home-manager.nixosModules.default
+        ];
 
         pkgs = import inputs.nixpkgs {
           system = "x86_64-linux";
@@ -32,14 +32,8 @@
             allowUnfree = true;
           };
         };
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./systems/six
-          inputs.illogical-flake.homeManagerModules.default
-          {
-            programs.illogical-impulse.enable = true;
-          }
-        ];
+
+        extraSpecialArgs = { inherit inputs; };
       };
     };
 }
