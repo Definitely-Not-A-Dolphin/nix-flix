@@ -13,7 +13,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    bambu-studio
+    #bambu-studio
     bluetui
     clang
     curl
@@ -31,6 +31,8 @@
     kitty
     nil
     nixd
+    signal-desktop
+    steam
     pipewire
     playerctl
     unzip

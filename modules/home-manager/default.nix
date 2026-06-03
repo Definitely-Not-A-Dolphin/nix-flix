@@ -4,6 +4,6 @@
   # Todo: import tree
   imports = [
     ./niri.nix
-    # ./noctalia.nix
+    ./noctalia.nix
   ];
 }
