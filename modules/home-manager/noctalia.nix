@@ -57,7 +57,7 @@
           radiusRatio = 0.2;
         };
         location = {
-          monthBeforeDay = true;
+          monthBeforeDay = false;
           name = "Marseille, France";
         };
       };
