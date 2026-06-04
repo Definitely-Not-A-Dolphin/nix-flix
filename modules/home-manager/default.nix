@@ -4,7 +4,7 @@
   # Todo: import tree
   imports = [
     ./hyprland.nix
-    ./illogical-impulse.nix
-    #./noctalia.nix
+    #./illogical-impulse.nix
+    ./noctalia.nix
   ];
 }
