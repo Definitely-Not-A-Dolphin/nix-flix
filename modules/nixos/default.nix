@@ -7,6 +7,6 @@
     ./fonts.nix
     ./locale.nix
     ./sddm.nix
-    #./noctalia.nix
+    ./steam.nix
   ];
 }

@@ -29,6 +29,7 @@
     home-manager
     hyprland
     kitty
+    lua-language-server
     nil
     nixd
     signal-desktop
@@ -40,6 +41,7 @@
     upower
     vesktop
     vim
+    wayland
     wget
     wl-clipboard
     zed-editor
@@ -54,11 +56,6 @@
   hardware.bluetooth.enable = true;
 
   services = {
-    displayManager = {
-      sddm = {
-        wayland.enable = true;
-      };
-    };
     geoclue2.enable = true;
     upower.enable = true;
     power-profiles-daemon.enable = true;

@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    illogical-flake = {
+      url = "github:soymou/illogical-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +26,12 @@
   };
 
   outputs =
-    inputs@{ self, nixpkgs, ... }:
+    inputs@{
+      self,
+      nixpkgs,
+      illogical-flake,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -31,15 +41,7 @@
         modules = [
           ./systems/core/default.nix
           ./systems/six/default.nix
-          {
-            wayland.windowManager.hyprland = {
-              enable = true;
-              # set the flake package
-              package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-              portalPackage =
-                inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-            };
-          }
+          illogical-flake.homeManagerModules.default
         ];
 
         # pkgs = import inputs.nixpkgs {
