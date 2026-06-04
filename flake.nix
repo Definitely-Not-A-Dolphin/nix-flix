@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +31,15 @@
         modules = [
           ./systems/core/default.nix
           ./systems/six/default.nix
-          inputs.home-manager.nixosModules.default
+          {
+            wayland.windowManager.hyprland = {
+              enable = true;
+              # set the flake package
+              package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+              portalPackage =
+                inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+            };
+          }
         ];
 
         # pkgs = import inputs.nixpkgs {

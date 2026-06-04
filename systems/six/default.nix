@@ -32,6 +32,7 @@
     nil
     nixd
     signal-desktop
+    spotify
     steam
     pipewire
     playerctl

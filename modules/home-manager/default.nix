@@ -3,7 +3,7 @@
   # alle dingetjes :3
   # Todo: import tree
   imports = [
-    ./niri.nix
+    ./hyprland.nix
     ./noctalia.nix
   ];
 }
