@@ -36,20 +36,37 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.six = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./systems/core/default.nix
-          ./systems/six/default.nix
-        ];
+      nixosConfigurations = {
+        six = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./systems/core/default.nix
+            ./systems/six/default.nix
+          ];
 
-        # pkgs = import inputs.nixpkgs {
-        #   system = "x86_64-linux";
-        #   config = {
-        #     allowUnfree = true;
-        #   };
-        # };
+          # pkgs = import inputs.nixpkgs {
+          #   system = "x86_64-linux";
+          #   config = {
+          #     allowUnfree = true;
+          #   };
+          # };
 
-        specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; };
+        };
+        thirtysix = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./systems/core/default.nix
+            ./systems/thirtysix/default.nix
+          ];
+
+          # pkgs = import inputs.nixpkgs {
+          #   system = "x86_64-linux";
+          #   config = {
+          #     allowUnfree = true;
+          #   };
+          # };
+
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }
