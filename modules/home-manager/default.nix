@@ -5,6 +5,6 @@
   imports = [
     ./hyprland.nix
     #./illogical-impulse.nix
-    ./noctalia.nix
+    #./noctalia.nix
   ];
 }
