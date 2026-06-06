@@ -15,43 +15,28 @@
   environment.systemPackages = with pkgs; [
     #bambu-studio
 
+    # Utils
+    kdePackages.dolphin
+    firefox
+    fuzzel
+    home-manager
+
     # WM
     hyprland
     noctalia-shell
+    wayland
 
     # coding
-    clang
     deno
-    git
-    gh
     lua-language-server
     nil
     nixd
     zed-editor
 
-    bluetui
-    curl
-    fastfetch
-    firefox
-    fish
-    fontconfig
-    fuzzel
-    geoclue2
-    home-manager
-    kitty
     signal-desktop
     spotify
     steam
-    pipewire
-    playerctl
-    unzip
-    upower
     vesktop
-    vim
-    wayland
-    wget
-    wl-clipboard
-    zip
   ];
 
   boot.loader = {
