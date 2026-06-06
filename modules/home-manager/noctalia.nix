@@ -1,12 +1,10 @@
 { inputs, ... }:
 {
   home-manager.users.killioiden = {
-    # import the home manager module
     imports = [
       inputs.noctalia.homeModules.default
     ];
 
-    # configure options
     programs.noctalia-shell = {
       enable = true;
       plugins = {
@@ -40,14 +38,16 @@
           widgets = {
             left = [
               {
-                id = "ControlCenter";
-                useDistroLogo = true;
-              }
-              {
                 id = "Network";
               }
               {
                 id = "Bluetooth";
+              }
+              {
+                id = "WallpaperSelector";
+              }
+              {
+                id = "NoctaliaPerformance";
               }
             ];
             center = [
@@ -58,6 +58,18 @@
               }
             ];
             right = [
+              {
+                id = "Notifications";
+              }
+              {
+                id = "PowerProfile";
+              }
+              {
+                id = "KeepAwake";
+              }
+              {
+                id = "NightLight";
+              }
               {
                 alwaysShowPercentage = true;
                 id = "Battery";
