@@ -25,20 +25,17 @@
         };
         version = 2;
       };
-      # this may also be a string or a path to a JSON file.
 
       pluginSettings = {
         catwalk = {
           minimumThreshold = 25;
           hideBackground = true;
         };
-        # this may also be a string or a path to a JSON file.
       };
       settings = {
-        # configure noctalia here
         bar = {
           density = "compact";
-          position = "right";
+          position = "top";
           showCapsule = false;
           widgets = {
             left = [
@@ -62,12 +59,12 @@
             ];
             right = [
               {
-                alwaysShowPercentage = false;
+                alwaysShowPercentage = true;
                 id = "Battery";
-                warningThreshold = 30;
+                warningThreshold = 10;
               }
               {
-                formatHorizontal = "HH:mm";
+                formatHorizontal = "HH:mm:ss";
                 formatVertical = "HH mm";
                 id = "Clock";
                 useMonospacedFont = true;
@@ -83,7 +80,7 @@
         };
         location = {
           monthBeforeDay = false;
-          name = "Marseille, France";
+          name = "Den Haag, Netherlands";
         };
       };
       # this may also be a string or a path to a JSON file.
