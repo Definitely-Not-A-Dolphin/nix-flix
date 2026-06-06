@@ -14,24 +14,31 @@
 
   environment.systemPackages = with pkgs; [
     #bambu-studio
-    bluetui
+
+    # WM
+    hyprland
+    noctalia-shell
+
+    # coding
     clang
-    curl
     deno
+    git
+    gh
+    lua-language-server
+    nil
+    nixd
+    zed-editor
+
+    bluetui
+    curl
     fastfetch
     firefox
     fish
     fontconfig
     fuzzel
     geoclue2
-    git
-    gh
     home-manager
-    hyprland
     kitty
-    lua-language-server
-    nil
-    nixd
     signal-desktop
     spotify
     steam
@@ -44,7 +51,6 @@
     wayland
     wget
     wl-clipboard
-    zed-editor
     zip
   ];
 
