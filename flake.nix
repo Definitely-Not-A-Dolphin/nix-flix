@@ -14,21 +14,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # illogical-flake = {
-    #   url = "github:soymou/illogical-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+    illogical-flake = {
+      url = "github:soymou/illogical-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
     inputs@{
       self,
       nixpkgs,
+      illogical-flake,
       ...
     }:
     let
@@ -56,6 +57,7 @@
           modules = [
             ./systems/core/default.nix
             ./systems/thirtysix/default.nix
+            illogical-flake.homeManagerModules.default
           ];
 
           # pkgs = import inputs.nixpkgs {
