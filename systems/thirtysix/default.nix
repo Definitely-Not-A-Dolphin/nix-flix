@@ -31,11 +31,13 @@
     lua-language-server
     nil
     nixd
+    vscode
     zed-editor
 
     signal-desktop
     spotify
     steam
+    typst
     vesktop
   ];
 
