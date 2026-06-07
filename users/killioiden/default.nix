@@ -19,12 +19,10 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users.killioiden = {
-      home = {
-        packages = [ ];
-        stateVersion = "25.11";
-      };
-      # andere dingen hier
+      home = ../../systems/thirtysix/home.nix;
     };
   };
 }
