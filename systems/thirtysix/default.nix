@@ -23,6 +23,7 @@
 
     # WM
     hyprland
+    hyprshot
     noctalia-shell
     wayland
 
@@ -43,7 +44,7 @@
 
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [
+    libraries = [
       # Add any missing dynamic libraries for unpackaged programs
       # here, NOT in environment.systemPackages
     ];
