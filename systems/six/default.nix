@@ -34,10 +34,11 @@
     lua-language-server
     nil
     nixd
+    nodejs
+    vitejs
     vscode
     zed-editor
 
-    nodejs
     signal-desktop
     spotify
     steam
