@@ -26,11 +26,7 @@
   };
 
   outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      ...
-    }:
+    inputs@{ nixpkgs, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -41,21 +37,6 @@
           modules = [
             ./systems/core/default.nix
             ./systems/six/default.nix
-          ];
-
-          # pkgs = import inputs.nixpkgs {
-          #   system = "x86_64-linux";
-          #   config = {
-          #     allowUnfree = true;
-          #   };
-          # };
-
-          specialArgs = { inherit inputs; };
-        };
-        thirtysix = nixpkgs.lib.nixosSystem {
-          modules = [
-            ./systems/core/default.nix
-            ./systems/thirtysix/default.nix
           ];
 
           # pkgs = import inputs.nixpkgs {

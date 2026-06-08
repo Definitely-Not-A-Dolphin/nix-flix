@@ -14,39 +14,44 @@
 
   environment.systemPackages = with pkgs; [
     #bambu-studio
-    bluetui
-    clang
-    curl
-    deno
-    fastfetch
+
+    # Utils
+    kdePackages.dolphin
     firefox
-    fish
-    fontconfig
     fuzzel
-    geoclue2
-    git
-    gh
     home-manager
+
+    # WM
     hyprland
-    kitty
+    hyprshot
+    hyprlock
+    noctalia-shell
+    nwg-displays
+    wayland
+
+    # coding
+    deno
     lua-language-server
     nil
     nixd
+    vscode
+    zed-editor
+
+    nodejs
     signal-desktop
     spotify
     steam
-    pipewire
-    playerctl
-    unzip
-    upower
+    typst
     vesktop
-    vim
-    wayland
-    wget
-    wl-clipboard
-    zed-editor
-    zip
   ];
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = [
+      # Add any missing dynamic libraries for unpackaged programs
+      # here, NOT in environment.systemPackages
+    ];
+  };
 
   boot.loader = {
     systemd-boot.enable = true;

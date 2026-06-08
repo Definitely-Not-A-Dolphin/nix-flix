@@ -2,6 +2,6 @@
 {
   networking = {
     networkmanager.enable = true;
-    hostName = "thirtysix";
+    hostName = "six";
   };
 }
