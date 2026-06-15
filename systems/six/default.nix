@@ -13,7 +13,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    #bambu-studio
+    # 3D printing
+    bambu-studio
 
     # Utils
     kdePackages.dolphin
@@ -29,7 +30,7 @@
     nwg-displays
     wayland
 
-    # coding
+    # Development
     deno
     lua-language-server
     nil
@@ -38,11 +39,12 @@
     vitejs
     vscode
     zed-editor
+    typst
 
+    # General
     signal-desktop
     spotify
     steam
-    typst
     vesktop
   ];
 
