@@ -32,7 +32,7 @@
       };
       settings = {
         bar = {
-          density = "compact";
+          density = "default";
           position = "top";
           showCapsule = false;
           widgets = {
