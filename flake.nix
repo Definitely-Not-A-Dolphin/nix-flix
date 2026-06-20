@@ -48,6 +48,22 @@
 
           specialArgs = { inherit inputs; };
         };
+        lumi = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./systems/core/default.nix
+            ./systems/lumi/default.nix
+          ];
+
+          # pkgs = import inputs.nixpkgs {
+          #   system = "x86_64-linux";
+          #   config = {
+          #     allowUnfree = true;
+          #   };
+          # };
+
+          specialArgs = { inherit inputs; };
+        };
+
       };
     };
 }

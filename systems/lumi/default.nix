@@ -9,7 +9,7 @@
     ../../modules/nixos/default.nix
     ../../modules/home-manager/default.nix
 
-    ../../users/killioiden.nix
+    ../../users/killioiden/default.nix
   ];
 
   environment.systemPackages = with pkgs; [
