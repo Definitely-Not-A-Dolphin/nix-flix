@@ -7,7 +7,6 @@
     ../core/default.nix
 
     ../../modules/nixos/default.nix
-    ../../modules/home-manager/default.nix
 
     ../../users/killioiden.nix
   ];
