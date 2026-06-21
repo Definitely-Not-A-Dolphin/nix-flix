@@ -3,11 +3,9 @@
   imports = [
     ./networking.nix
     ./hardware-configuration.nix
-
     ../core/default.nix
-
     ../../modules/nixos/default.nix
-
+    ../../modules/home-manager/default.nix
     ../../users/killioiden.nix
   ];
 
@@ -15,12 +13,16 @@
     # 3D printing
     #bambu-studio
 
-    # Utils
+    # General
     appimage-run
     kdePackages.dolphin
     firefox
     fuzzel
     home-manager
+    signal-desktop
+    spotify
+    steam
+    vesktop
 
     # WM
     hyprland
@@ -40,12 +42,6 @@
     vscode
     zed-editor
     typst
-
-    # General
-    signal-desktop
-    spotify
-    steam
-    vesktop
   ];
 
   programs.nix-ld = {

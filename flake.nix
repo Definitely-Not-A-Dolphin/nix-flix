@@ -21,7 +21,7 @@
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    inputs@{ nixpkgs, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -34,7 +34,7 @@
             ./systems/six/default.nix
           ];
 
-          specialArgs = { inherit inputs; };
+          #specialArgs = { inherit inputs; };
         };
         lumi = nixpkgs.lib.nixosSystem {
           modules = [
@@ -43,11 +43,6 @@
           ];
 
           specialArgs = { inherit inputs; };
-        };
-        homeConfigurations.killioiden = home-manager.lib.homeManagerConfiguration {
-          modules = [ ./modules/home-manager/home.nix ];
-
-          extraSpecialArgs = { inherit inputs; };
         };
       };
     };

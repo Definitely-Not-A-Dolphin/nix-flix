@@ -13,7 +13,6 @@
       "networkmanager"
       "wheel"
     ];
-    #packages = with pkgs; [ ];
     shell = pkgs.fish;
   };
 
@@ -23,7 +22,7 @@
     useUserPackages = true;
     users.killioiden.home = {
       packages = [ ];
-      stateVersion = "25.11";
+      stateVersion = "26.05";
       file.".config/hypr/.luarc.json" = {
         text = builtins.toJSON {
           workspace = {
