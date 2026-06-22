@@ -44,14 +44,6 @@
     typst
   ];
 
-  programs.nix-ld = {
-    enable = true;
-    libraries = [
-      # Add any missing dynamic libraries for unpackaged programs
-      # here, NOT in environment.systemPackages
-    ];
-  };
-
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
