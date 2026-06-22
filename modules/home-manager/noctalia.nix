@@ -203,17 +203,13 @@
             ];
             right = [
               {
-                blacklist = [
-
-                ];
+                blacklist = [ ];
                 chevronColor = "none";
                 colorizeIcons = false;
                 drawerEnabled = true;
                 hidePassive = false;
                 id = "Tray";
-                pinned = [
-
-                ];
+                pinned = [ ];
               }
               {
                 iconColor = "none";
@@ -345,9 +341,7 @@
           enabled = true;
           gridSnap = false;
           gridSnapScale = false;
-          monitorWidgets = [
-
-          ];
+          monitorWidgets = [ ];
           overviewEnabled = true;
         };
         dock = {
@@ -371,13 +365,9 @@
           launcherIconColor = "none";
           launcherPosition = "end";
           launcherUseDistroLogo = false;
-          monitors = [
-
-          ];
+          monitors = [ ];
           onlySameOutput = true;
-          pinnedApps = [
-
-          ];
+          pinnedApps = [ ];
           pinnedStatic = false;
           position = "bottom";
           showDockIndicator = false;
@@ -404,37 +394,23 @@
           forceBlackScreenCorners = false;
           iRadiusRatio = 1;
           keybinds = {
-            keyDown = [
-              "Down"
-            ];
+            keyDown = [ "Down" ];
             keyEnter = [
               "Return"
               "Enter"
             ];
-            keyEscape = [
-              "Esc"
-            ];
-            keyLeft = [
-              "Left"
-            ];
-            keyRemove = [
-              "Del"
-            ];
-            keyRight = [
-              "Right"
-            ];
-            keyUp = [
-              "Up"
-            ];
+            keyEscape = [ "Esc" ];
+            keyLeft = [ "Left" ];
+            keyRemove = [ "Del" ];
+            keyRight = [ "Right" ];
+            keyUp = [ "Up" ];
           };
           language = "";
           lockOnSuspend = true;
           lockScreenAnimations = true;
           lockScreenBlur = 0;
           lockScreenCountdownDuration = 10000;
-          lockScreenMonitors = [
-
-          ];
+          lockScreenMonitors = [ ];
           lockScreenTint = 0;
           passwordChars = true;
           radiusRatio = 1;

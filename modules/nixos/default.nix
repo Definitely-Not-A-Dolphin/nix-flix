@@ -7,6 +7,7 @@
     ./fonts.nix
     ./git.nix
     ./locale.nix
+    ./nixd.nix
     ./sddm.nix
     ./steam.nix
   ];
