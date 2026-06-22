@@ -34,7 +34,7 @@
             ./systems/six/default.nix
           ];
 
-          #specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; };
         };
         lumi = nixpkgs.lib.nixosSystem {
           modules = [
