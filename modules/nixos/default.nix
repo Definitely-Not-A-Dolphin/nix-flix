@@ -5,6 +5,7 @@
   imports = [
     ./fish.nix
     ./fonts.nix
+    ./git.nix
     ./locale.nix
     ./sddm.nix
     ./steam.nix

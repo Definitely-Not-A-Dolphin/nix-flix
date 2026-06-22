@@ -22,7 +22,7 @@
     useUserPackages = true;
     users.killioiden.home = {
       packages = [ ];
-      stateVersion = "26.11";
+      stateVersion = "26.05"; # no touchy
       file.".config/hypr/.luarc.json" = {
         text = builtins.toJSON {
           workspace = {
