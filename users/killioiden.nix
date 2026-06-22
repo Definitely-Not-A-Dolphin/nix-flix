@@ -17,6 +17,7 @@
   };
 
   home-manager = {
+    backupFileExtension = "bckp";
     extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     useUserPackages = true;
