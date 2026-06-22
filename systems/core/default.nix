@@ -28,5 +28,17 @@
     zip
   ];
 
-  system.stateVersion = "25.11";
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+  hardware.bluetooth.enable = true;
+
+  services = {
+    geoclue2.enable = true;
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
+  };
 }
