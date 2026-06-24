@@ -4,8 +4,8 @@
     ./networking.nix
     ./hardware-configuration.nix
     ../core/default.nix
-    ../modules/default.nix
-    ../home-manager/default.nix
+    ../../modules/default.nix
+    ../../home-manager/default.nix
     ../../users/killioiden.nix
   ];
 
