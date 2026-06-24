@@ -22,6 +22,7 @@
     playerctl
     unzip
     upower
+    tree
     vim
     wget
     wl-clipboard
