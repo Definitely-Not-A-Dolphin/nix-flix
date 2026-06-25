@@ -269,10 +269,10 @@
         colorSchemes = {
           darkMode = true;
           generationMethod = "tonal-spot";
-          manualSunrise = "06:30";
-          manualSunset = "18:30";
+          manualSunrise = "06=30";
+          manualSunset = "18=30";
           monitorForColors = "";
-          predefinedScheme = "Tokyo Night";
+          predefinedScheme = "Noctalia (default)";
           schedulingMode = "off";
           syncGsettings = true;
           useWallpaperColors = true;
