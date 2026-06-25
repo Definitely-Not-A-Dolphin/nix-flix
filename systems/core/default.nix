@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./killioiden.nix
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [
@@ -9,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     bluetui
+    cargo
     clang
     curl
     git

@@ -5,8 +5,6 @@
     ./hardware-configuration.nix
     ../core/default.nix
     ../../modules/default.nix
-    ../../home-manager/default.nix
-    ../../users/killioiden.nix
   ];
 
   environment.systemPackages = with pkgs; [
