@@ -272,7 +272,7 @@
           manualSunrise = "06:30";
           manualSunset = "18:30";
           monitorForColors = "";
-          predefinedScheme = "Ayu";
+          predefinedScheme = "Tokyo Night";
           schedulingMode = "off";
           syncGsettings = true;
           useWallpaperColors = true;
