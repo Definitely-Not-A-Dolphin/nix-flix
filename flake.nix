@@ -30,7 +30,6 @@
       nixosConfigurations = {
         six = nixpkgs.lib.nixosSystem {
           modules = [
-            ./systems/core/default.nix
             ./systems/six/default.nix
           ];
 
@@ -38,7 +37,6 @@
         };
         lumi = nixpkgs.lib.nixosSystem {
           modules = [
-            ./systems/core/default.nix
             ./systems/lumi/default.nix
           ];
 

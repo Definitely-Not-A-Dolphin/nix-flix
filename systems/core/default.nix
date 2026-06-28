@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     bluetui
     cargo
+    clippy
     clang
     curl
     git
