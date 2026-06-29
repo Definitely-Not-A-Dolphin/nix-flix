@@ -16,6 +16,8 @@
     cargo
     clippy
     clang
+    rustup
+    rustc
     curl
     git
     gh
