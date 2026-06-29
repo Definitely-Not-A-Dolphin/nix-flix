@@ -18,6 +18,7 @@
     fuzzel
     home-manager
     signal-desktop
+    slack
     spotify
     steam
     vesktop
