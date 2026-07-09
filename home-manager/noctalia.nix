@@ -651,7 +651,7 @@
         };
         wallpaper = {
           automationEnabled = false;
-          directory = "/home/killioiden/Images/wallpapers";
+          directory = "/home/killioiden/Pictures/wallpapers";
           enableMultiMonitorDirectories = false;
           enabled = true;
           favorites = [ ];

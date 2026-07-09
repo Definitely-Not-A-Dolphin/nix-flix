@@ -26,6 +26,7 @@
     fontconfig
     geoclue2
     kitty
+    m4
     pipewire
     playerctl
     unzip
