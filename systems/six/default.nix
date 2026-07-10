@@ -36,7 +36,7 @@
     nodejs
     vitejs
     vscode
-    zed-editor
+    # zed-editor
     typst
   ];
 

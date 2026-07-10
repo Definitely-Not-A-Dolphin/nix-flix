@@ -36,6 +36,8 @@
     wget
     wl-clipboard
     zip
+    zed-editor-fhs
+    # zed
   ];
 
   boot.loader = {

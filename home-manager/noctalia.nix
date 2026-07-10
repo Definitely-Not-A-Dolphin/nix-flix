@@ -480,12 +480,12 @@
           wifiDetailsViewMode = "grid";
         };
         nightLight = {
-          autoSchedule = false;
+          autoSchedule = true;
           dayTemp = "6500";
-          enabled = false;
+          enabled = true;
           forced = false;
-          manualSunrise = "06:30";
-          manualSunset = "18:30";
+          manualSunrise = "8:00";
+          manualSunset = "00:00";
           nightTemp = "4000";
         };
         noctaliaPerformance = {
