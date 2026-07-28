@@ -54,7 +54,7 @@
           showCategories = true;
           showIconBackground = false;
           sortByMostUsed = true;
-          terminalCommand = "alacritty -e";
+          terminalCommand = "kitty";
           viewMode = "list";
         };
         audio = {
