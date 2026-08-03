@@ -9,10 +9,11 @@
 
   environment.systemPackages = with pkgs; [
     # 3D printing
-    #bambu-studio
+    orca-slicer
 
     # General
     appimage-run
+    element-desktop
     kdePackages.dolphin
     firefox
     fuzzel

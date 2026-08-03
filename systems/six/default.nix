@@ -10,6 +10,7 @@
   environment.systemPackages = with pkgs; [
     # General
     appimage-run
+    element-desktop
     kdePackages.dolphin
     firefox
     fuzzel
@@ -19,6 +20,9 @@
     spotify
     steam
     vesktop
+
+    # 3d printing
+    orca-slicer
 
     # WM
     hyprland
