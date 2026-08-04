@@ -10,19 +10,19 @@
   environment.systemPackages = with pkgs; [
     # General
     appimage-run
-    element-desktop
     kdePackages.dolphin
     firefox
     fuzzel
     home-manager
-    signal-desktop
-    slack
     spotify
     steam
-    vesktop
 
-    # 3d printing
-    orca-slicer
+    # Communications
+    element-desktop
+    signal-desktop
+    slack
+    vesktop
+    whatsapp-electron
 
     # WM
     hyprland
@@ -32,7 +32,7 @@
     nwg-displays
     wayland
 
-    # Development
+    # Dev
     deno
     lua-language-server
     nil

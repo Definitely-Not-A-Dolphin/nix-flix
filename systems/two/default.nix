@@ -8,21 +8,24 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # 3D printing
-    orca-slicer
-
     # General
     appimage-run
-    element-desktop
     kdePackages.dolphin
     firefox
     fuzzel
     home-manager
-    signal-desktop
-    slack
     spotify
     steam
+
+    # Communications
+    element-desktop
+    signal-desktop
+    slack
     vesktop
+    whatsapp-electron
+
+    # 3d printing
+    orca-slicer
 
     # WM
     hyprland
@@ -32,7 +35,7 @@
     nwg-displays
     wayland
 
-    # Development
+    # Dev
     deno
     lua-language-server
     nil
