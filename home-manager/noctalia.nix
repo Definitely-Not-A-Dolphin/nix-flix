@@ -444,7 +444,7 @@
           enabled = true;
           fadeDuration = 1;
           lockCommand = "";
-          lockTimeout = 599;
+          lockTimeout = 600;
           resumeLockCommand = "";
           resumeScreenOffCommand = "";
           resumeSuspendCommand = "";

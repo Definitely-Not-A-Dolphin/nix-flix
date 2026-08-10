@@ -5,14 +5,14 @@
       enable = true;
       settings = {
         logo = {
-          type = "kitty";
+          type = "alacritty";
           height = 20;
           padding = {
             top = 1;
           };
         };
         display = {
-          separator = " ➜  ";
+          separator = " -> ";
         };
         modules = [
           "break"
