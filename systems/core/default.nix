@@ -68,7 +68,7 @@
     nil
     nixd
     nodejs
-    rustup
+    # rustup
     rustc
     typst
     vitejs
