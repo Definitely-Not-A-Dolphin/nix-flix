@@ -12,22 +12,19 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    # System Core
     alacritty
+    appimage-run
     bluetui
-    cargo
-    clippy
-    clang
-    rustup
-    rustc
     curl
-    git
-    gh
     fastfetch
     fish
     fontconfig
     geoclue2
+    gh
+    git
+    home-manager
     kitty
-    m4
     pipewire
     playerctl
     unzip
@@ -37,8 +34,49 @@
     wget
     wl-clipboard
     zip
+
+    # User Core
+    kdePackages.dolphin
+    firefox
+    fuzzel
+    spotify
+
+    # Gaming
+    prismlauncher
+    steam
+
+    # Communications
+    element-desktop
+    signal-desktop
+    slack
+    vesktop
+    whatsapp-electron
+
+    # WM
+    hyprland
+    hyprshot
+    noctalia-shell
+    nwg-displays
+    wayland
+
+    # Development
+    cargo
+    clippy
+    clang
+    deno
+    lua-language-server
+    nil
+    nixd
+    nodejs
+    rustup
+    rustc
+    typst
+    vitejs
+    vscode
     zed-editor-fhs
-    # zed
+
+    # Misc
+    cmatrix
   ];
 
   boot.loader = {

@@ -5,7 +5,7 @@
       enable = true;
       settings = {
         logo = {
-          type = "alacritty";
+          type = "kitty";
           height = 20;
           padding = {
             top = 1;

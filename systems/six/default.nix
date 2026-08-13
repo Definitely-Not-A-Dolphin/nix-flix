@@ -8,41 +8,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # General
-    appimage-run
-    kdePackages.dolphin
-    firefox
-    fuzzel
-    home-manager
-    spotify
-    steam
-
-    # Communications
-    element-desktop
-    signal-desktop
-    slack
-    vesktop
-    whatsapp-electron
-
-    # WM
-    hyprland
-    hyprshot
-    hyprlock
-    noctalia-shell
-    nwg-displays
-    wayland
-
-    # Dev
-    deno
-    lua-language-server
-    nil
-    nixd
-    nodejs
-    vitejs
-    vscode
-    # zed-editor
-    typst
+    # 3d printing
+    orca-slicer
   ];
+
 
   system.stateVersion = "25.11";
 }
