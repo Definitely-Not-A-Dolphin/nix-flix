@@ -17,7 +17,6 @@
     appimage-run
     bluetui
     curl
-    fastfetch
     fish
     fontconfig
     geoclue2
@@ -76,6 +75,8 @@
 
     # Misc
     cmatrix
+    fastfetch
+    microfetch
   ];
 
   boot.loader = {
