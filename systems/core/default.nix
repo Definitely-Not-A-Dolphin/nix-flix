@@ -68,7 +68,6 @@
     nil
     nixd
     nodejs
-    # rustup
     rustc
     typst
     vitejs

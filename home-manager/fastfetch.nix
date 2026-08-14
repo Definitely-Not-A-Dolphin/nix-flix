@@ -19,141 +19,172 @@
             width = 3;
           };
         };
-        modules = [
-          "break"
-          {
-            type = "custom";
-            format = "{##727272}{{";
-          }
-          {
-            type = "custom";
-            format = "  {##575757}system = {##727272}{{";
-          }
-          {
-            type = "os";
-            key = "    {##7E97AB}os         {##727272}= ";
-            format = "{##88afa2}\"{name} {version} ({codename})\"{##727272};";
-          }
-          {
-            type = "os";
-            key = "    {##7E97AB}arch       {##727272}= ";
-            format = "{##88afa2}\"{arch}\"{##727272};";
-          }
-          {
-            type = "locale";
-            key = "    {##7E97AB}locale     {##727272}= ";
-            format = "{##88afa2}\"{result}\"{##727272};";
-          }
-          {
-            type = "uptime";
-            key = "    {##7E97AB}uptime     {##727272}= ";
-            format = "{##88afa2}\"{days} days, {hours} hours, {minutes} mins\"{##727272};";
-          }
-          {
-            type = "custom";
-            format = "  {##727272}}";
-          }
-          "break"
-          {
-            type = "cpu";
-            key = "  {##575757}hardware.{##7E97AB}cpu      {##727272}= ";
-            format = "{##88afa2}\"{name} ({cores-logical}) @ {freq-max}\"{##727272};";
-          }
-          {
-            type = "gpu";
-            key = "  {##575757}hardware.{##7E97AB}gpu      {##727272}= ";
-            format = "{##88afa2}\"{name}\"{##727272};";
-          }
-          {
-            type = "memory";
-            key = "  {##575757}hardware.{##7E97AB}ram      {##727272}= ";
-            format = "{##88afa2}\"{used<10} / {total>9}\"{##727272};  {##575757}# {percentage}";
-          }
-          {
-            type = "swap";
-            key = "  {##575757}hardware.{##7E97AB}swap     {##727272}= ";
-            format = "{##88afa2}\"{used<10} / {total>9}\"{##727272};  {##575757}# {percentage}";
-          }
-          {
-            type = "disk";
-            folders = "/";
-            key = "  {##575757}hardware.{##7E97AB}disk0    {##727272}= ";
-            format = "{##88afa2}\"{size-used<10} / {size-total>9}\"{##727272};  {##575757}# {size-percentage}";
-          }
-          {
-            type = "disk";
-            folders = "/srv/media";
-            key = "  {##575757}hardware.{##7E97AB}disk1    {##727272}= ";
-            format = "{##88afa2}\"{size-used<10} / {size-total>9}\"{##727272};  {##575757}# {size-percentage}";
-          }
-          "break"
-          {
-            type = "de";
-            key = "  {##575757}desktop.{##7E97AB}de        {##727272}= ";
-            format = "{##88afa2}\"{pretty-name} {version}\"{##727272};";
-          }
-          {
-            type = "wm";
-            key = "  {##575757}desktop.{##7E97AB}wm        {##727272}= ";
-            format = "{##88afa2}\"{pretty-name} ({protocol-name})\"{##727272};";
-          }
-          {
-            type = "display";
-            key = "  {##575757}desktop.{##7E97AB}display   {##727272}= ";
-            format = "{##88afa2}\"{width}x{height} @ {refresh-rate}Hz\"{##727272};";
-          }
-          {
-            type = "localip";
-            key = "  {##575757}desktop.{##7E97AB}localIp   {##727272}= ";
-            format = "{##88afa2}\"{ipv4}\"{##727272};";
-          }
-          "break"
-          {
-            type = "shell";
-            key = "  {##575757}terminal.{##7E97AB}shell    {##727272}= ";
-            format = "{##88afa2}\"{pretty-name} {version}\"{##727272};";
-          }
-          {
-            type = "terminal";
-            key = "  {##575757}terminal.{##7E97AB}term     {##727272}= ";
-            format = "{##88afa2}\"{pretty-name}\"{##727272};";
-          }
-          {
-            type = "packages";
-            key = "  {##575757}terminal.{##7E97AB}packages {##727272}= ";
-            format = "{##727272}[ {##88afa2}\"{nix-system} nix-system\" \"{nix-user} nix-user\"{##727272} ];";
-          }
-          "break"
-          {
-            type = "command";
-            text = "deno -v | sed 's/deno //'";
-            key = "  {##575757}dev.{##7E97AB}node          {##727272}= ";
-            format = "{##88afa2}\"{result}\"{##727272};";
-          }
-          {
-            type = "command";
-            text = "rustc --version | cut -d' ' -f2";
-            key = "  {##575757}dev.{##7E97AB}rust          {##727272}= ";
-            format = "{##88afa2}\"{result}\"{##727272};";
-          }
-          {
-            type = "command";
-            text = "nix --version | cut -d' ' -f3";
-            key = "  {##575757}dev.{##7E97AB}nix           {##727272}= ";
-            format = "{##88afa2}\"{result}\"{##727272};";
-          }
-          {
-            type = "command";
-            text = "git --version | cut -d' ' -f3";
-            key = "  {##575757}dev.{##7E97AB}git           {##727272}= ";
-            format = "{##88afa2}\"{result}\"{##727272};";
-          }
-          {
-            type = "custom";
-            format = "{##727272}}";
-          }
-          "break"
-        ];
+        modules =
+          let
+            codes = {
+              dark-grey = "{##575757}";
+              grey = "{##727272}";
+              blue = "{##6A9FB5}";
+              green = "{##75b5AA}";
+              bold = "{#1}";
+            };
+          in
+          [
+            "break"
+            {
+              type = "custom";
+              format = "${codes.grey}{{";
+            }
+            {
+              type = "custom";
+              format = "  ${codes.grey}{#1}system{#0}   ${codes.dark-grey}= ${codes.grey}{{";
+            }
+            {
+              type = "os";
+              key = "    ${codes.blue}os       {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{name} {version} ({codename})\"{#0}${codes.grey};";
+            }
+            {
+              type = "os";
+              key = "    ${codes.blue}arch     {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{arch}\"{#0}${codes.grey};";
+            }
+            {
+              type = "locale";
+              key = "    ${codes.blue}locale   {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{result}\"{#0}${codes.grey};";
+            }
+            {
+              type = "uptime";
+              key = "    ${codes.blue}uptime   {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{days} days, {hours} hours, {minutes} mins\"{#0}${codes.grey};";
+            }
+            {
+              type = "custom";
+              format = "  ${codes.dark-grey}};";
+            }
+            "break"
+            {
+              type = "custom";
+              format = "  ${codes.grey}{#1}hardware{#0} ${codes.dark-grey}= ${codes.grey}{{";
+            }
+            {
+              type = "cpu";
+              key = "    ${codes.blue}cpu      {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{name} ({cores-logical}) @ {freq-max}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "gpu";
+              key = "    ${codes.blue}gpu      {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{name}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "memory";
+              key = "    ${codes.blue}ram      {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{used<10} / {total>9}\"{#0}${codes.dark-grey}; #{percentage}";
+            }
+            {
+              type = "disk";
+              folders = "/";
+              key = "    ${codes.blue}disk0    {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{size-used<10} / {size-total>9}\"{#0}${codes.dark-grey}; #{size-percentage}";
+            }
+            {
+              type = "custom";
+              format = "  ${codes.grey}};";
+            }
+            "break"
+            {
+              type = "custom";
+              format = "  ${codes.grey}{#1}desktop{#0}  ${codes.dark-grey}= ${codes.grey}{{";
+            }
+            {
+              type = "de";
+              key = "    ${codes.blue}de       {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{pretty-name} {version}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "wm";
+              key = "    ${codes.blue}wm       {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{pretty-name} ({protocol-name})\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "display";
+              key = "    ${codes.blue}display  {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{width}x{height} @ {refresh-rate}Hz\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "localip";
+              key = "    ${codes.blue}localIp  {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{ipv4}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "custom";
+              format = "  ${codes.grey}};";
+            }
+            "break"
+            {
+              type = "custom";
+              format = "  ${codes.grey}{#1}terminal{#0} ${codes.dark-grey}= ${codes.grey}{{";
+            }
+            {
+              type = "shell";
+              key = "    ${codes.blue}shell    {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{pretty-name} {version}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "terminal";
+              key = "    ${codes.blue}term     {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{pretty-name}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "packages";
+              key = "    ${codes.blue}packages {#0}${codes.dark-grey}= ";
+              format = "${codes.dark-grey}[ ${codes.green}{#1}\"{nix-system} nix-system\" \"{nix-user} nix-user\"{#0}${codes.dark-grey} ];";
+            }
+            {
+              type = "custom";
+              format = "  ${codes.grey}};";
+            }
+            "break"
+            {
+              type = "custom";
+              format = "  ${codes.grey}{#1}dev{#0}      ${codes.dark-grey}= ${codes.grey}{{";
+            }
+            {
+              type = "command";
+              text = "deno -v | sed 's/deno //'";
+              key = "    ${codes.blue}deno     {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{result}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "command";
+              text = "rustc --version | cut -d' ' -f2";
+              key = "    ${codes.blue}rust     {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{result}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "command";
+              text = "nix --version | cut -d' ' -f3";
+              key = "    ${codes.blue}nix      {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{result}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "command";
+              text = "git --version | cut -d' ' -f3";
+              key = "    ${codes.blue}git      {#0}${codes.dark-grey}= ";
+              format = "${codes.green}{#1}\"{result}\"{#0}${codes.dark-grey};";
+            }
+            {
+              type = "custom";
+              format = "  ${codes.grey}};";
+            }
+            {
+              type = "custom";
+              format = "${codes.grey}}";
+            }
+            "break"
+          ];
       };
     };
   };
