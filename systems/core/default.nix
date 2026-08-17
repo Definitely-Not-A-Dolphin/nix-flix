@@ -77,7 +77,6 @@
     cmatrix
     fastfetch
     microfetch
-    nitch
   ];
 
   boot.loader = {
