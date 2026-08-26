@@ -27,11 +27,9 @@
       stateVersion = "26.05"; # no touchy
       file.".config/hypr/.luarc.json" = {
         text = builtins.toJSON {
-          workspace = {
-            library = [
-              "${pkgs.hyprland}/share/hypr/stubs"
-            ];
-          };
+          workspace.library = [
+            "${pkgs.hyprland}/share/hypr/stubs"
+          ];
           diagnostics = {
             globals = [ "hl" ];
           };

@@ -39,6 +39,7 @@
     firefox
     fuzzel
     spotify
+    kdePackages.okular
 
     # Gaming
     prismlauncher
