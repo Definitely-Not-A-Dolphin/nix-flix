@@ -146,45 +146,7 @@
             format = "  ${codes.grey}};";
           }
           "break"
-          {
-            type = "custom";
-            format = "  ${codes.grey}${codes.blue}dev{#0}      ${codes.dark-grey}= ${codes.grey}{{";
-          }
-          {
-            type = "command";
-            text = "deno -v | sed 's/deno //'";
-            key = "    ${codes.blue}deno     {#0}${codes.dark-grey}= ";
-            format = "${codes.green}${codes.blue}\"{result}\"{#0}${codes.dark-grey};";
-          }
-          {
-            type = "command";
-            text = "rustc --version | cut -d' ' -f2";
-            key = "    ${codes.blue}rust     {#0}${codes.dark-grey}= ";
-            format = "${codes.green}${codes.blue}\"{result}\"{#0}${codes.dark-grey};";
-          }
-          {
-            type = "command";
-            text = "nix --version | cut -d' ' -f3";
-            key = "    ${codes.blue}nix      {#0}${codes.dark-grey}= ";
-            format = "${codes.green}${codes.blue}\"{result}\"{#0}${codes.dark-grey};";
-          }
-          {
-            type = "command";
-            text = "git --version | cut -d' ' -f3";
-            key = "    ${codes.blue}git      {#0}${codes.dark-grey}= ";
-            format = "${codes.green}${codes.blue}\"{result}\"{#0}${codes.dark-grey};";
-          }
-          {
-            type = "custom";
-            format = "  ${codes.grey}};";
-          }
-          {
-            type = "custom";
-            format = "${codes.grey}}";
-          }
-          "break"
         ];
     };
   };
-
 }

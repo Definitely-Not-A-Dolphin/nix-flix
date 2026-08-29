@@ -31,6 +31,5 @@
           selection = colors.black;
         };
     };
-
   };
 }
