@@ -60,17 +60,12 @@
     wayland
 
     # Development
-    cargo
-    clippy
     clang
     deno
     lua-language-server
     nil
     nixd
-    nodejs
-    rustc
     typst
-    vitejs
     vscode
     zed-editor-fhs
 
