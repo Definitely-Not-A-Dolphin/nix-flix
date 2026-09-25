@@ -5,7 +5,7 @@
     ./git.nix
     ./hyprland.nix
     ./locale.nix
-    ./monado.nix
+    #./monado.nix
     ./nixd.nix
     ./sddm.nix
     ./steam.nix

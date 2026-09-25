@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -22,17 +27,26 @@
     extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.killioiden.home = {
-      packages = [ ];
-      stateVersion = "26.05"; # no touchy
-      file.".config/hypr/.luarc.json" = {
-        text = builtins.toJSON {
+    users.killioiden = {
+      home = {
+        packages = [ ];
+        stateVersion = "26.05"; # no touchy
+        file.".config/hypr/.luarc.json".text = builtins.toJSON {
           workspace.library = [
             "${pkgs.hyprland}/share/hypr/stubs"
           ];
           diagnostics = {
             globals = [ "hl" ];
           };
+        };
+      };
+      xdg.configFile."openxr/1/active_runtime.json".text = builtins.toJSON {
+        file_format_version = "1.0.0";
+        runtime = {
+          VALVE_runtime_is_steamvr = true;
+          # maybe change the home path to be dynamic
+          library_path = "${config.users.users.killioiden.home}/SteamVR/bin/linux64/vrclient.so";
+          name = "SteamVR";
         };
       };
     };
