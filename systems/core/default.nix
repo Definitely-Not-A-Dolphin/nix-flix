@@ -42,6 +42,8 @@
     kdePackages.okular
 
     # Gaming
+    bs-manager
+    r2modman
     prismlauncher
     steam
 
