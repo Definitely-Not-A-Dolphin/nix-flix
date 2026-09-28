@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ./networking.nix
@@ -9,7 +9,7 @@
 
   system.stateVersion = "25.11";
 
-  home-manager.users.killioiden.programs.noctalia-shell.settings.idle = {
+  home-manager.users.killioiden.programs.noctalia-shell.settings.idle = lib.mkForce {
     lockTimeout = 36000;
     screenOffTimeout = 36000;
     suspendTimeout = 36000;

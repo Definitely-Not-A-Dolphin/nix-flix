@@ -40,13 +40,16 @@
           };
         };
       };
-      xdg.configFile."openxr/1/active_runtime.json".text = builtins.toJSON {
-        file_format_version = "1.0.0";
-        runtime = {
-          VALVE_runtime_is_steamvr = true;
-          # maybe change the home path to be dynamic
-          library_path = "${config.users.users.killioiden.home}/SteamVR/bin/linux64/vrclient.so";
-          name = "SteamVR";
+      xdg.configFile."openxr/1/active_runtime.json" = {
+        force = true;
+        text = builtins.toJSON {
+          file_format_version = "1.0.0";
+          runtime = {
+            VALVE_runtime_is_steamvr = true;
+            # maybe change the home path to be dynamic
+            library_path = "${config.users.users.killioiden.home}/SteamVR/bin/linux64/vrclient.so";
+            name = "SteamVR";
+          };
         };
       };
     };
