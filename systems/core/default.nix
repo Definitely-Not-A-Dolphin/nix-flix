@@ -2,14 +2,20 @@
 {
   imports = [
     ../../killioiden/default.nix
+    ../../modules/default.nix
+    ./fonts.nix
+    ./locale.nix
+    ./sddm.nix
+    ./services.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     # System Core
@@ -38,11 +44,12 @@
     kdePackages.dolphin
     firefox
     fuzzel
-    spotify
     kdePackages.okular
 
+    # User other
+    spotify
+
     # Gaming
-    bs-manager
     r2modman
     prismlauncher
     steam
@@ -64,6 +71,7 @@
     # Development
     clang
     deno
+    lua
     lua-language-server
     nil
     nixd
@@ -77,19 +85,14 @@
     microfetch
   ];
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-  };
-
   hardware.bluetooth.enable = true;
 
-  services = {
-    geoclue2.enable = true;
-    upower.enable = true;
-    power-profiles-daemon.enable = true;
-  };
+  networking.networkmanager.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 }
