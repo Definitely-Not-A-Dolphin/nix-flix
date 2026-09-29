@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     # Gaming
     bs-manager
+    wayvr
   ];
 
   networking.hostName = "two";

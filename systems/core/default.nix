@@ -11,6 +11,9 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "cfg80211.ieee80211_regdom=NL"
+    ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -23,12 +26,14 @@
     appimage-run
     bluetui
     curl
+    firewalld
     fish
     fontconfig
     geoclue2
     gh
     git
     home-manager
+    iw
     kitty
     pipewire
     playerctl
