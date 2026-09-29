@@ -3,15 +3,11 @@
   home-manager.users.killioiden.programs.alacritty = {
     enable = true;
     settings = {
-      font = {
-        normal = {
-          family = "JetBrains Mono";
-          style = "Regular";
-        };
+      font.normal = {
+        family = "JetBrains Mono";
+        style = "Regular";
       };
-      window = {
-        opacity = 0.9;
-      };
+      window.opacity = 0.9;
     };
   };
 }

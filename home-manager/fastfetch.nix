@@ -60,7 +60,7 @@
           }
           {
             type = "custom";
-            format = "  ${codes.dark-grey}};";
+            format = "  ${codes.grey}};";
           }
           "break"
           {
