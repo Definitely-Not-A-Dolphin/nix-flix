@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 {
   home-manager.users.killioiden = {
     imports = [
@@ -442,14 +442,14 @@
           enabled = true;
           fadeDuration = 1;
           lockCommand = "";
-          lockTimeout = 600;
+          lockTimeout = if config.networking.hostName == "two" then 36000 else 600;
           resumeLockCommand = "";
           resumeScreenOffCommand = "";
           resumeSuspendCommand = "";
           screenOffCommand = "";
-          screenOffTimeout = 600;
+          screenOffTimeout = if config.networking.hostName == "two" then 36000 else 600;
           suspendCommand = "";
-          suspendTimeout = 1800;
+          suspendTimeout = if config.networking.hostName == "two" then 36000 else 1800;
         };
         location = {
           analogClockInCalendar = false;
