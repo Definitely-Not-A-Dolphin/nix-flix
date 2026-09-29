@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./killioiden.nix
+    ../../killioiden/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
