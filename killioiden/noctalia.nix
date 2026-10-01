@@ -21,11 +21,9 @@
         };
         version = 2;
       };
-      pluginSettings = {
-        catwalk = {
-          minimumThreshold = 25;
-          hideBackground = true;
-        };
+      pluginSettings.catwalk = {
+        hideBackground = true;
+        minimumThreshold = 25;
       };
       settings = {
         appLauncher = {
