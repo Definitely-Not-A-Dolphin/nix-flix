@@ -28,6 +28,7 @@
     curl
     firewalld
     fish
+    ffmpeg
     fontconfig
     geoclue2
     gh

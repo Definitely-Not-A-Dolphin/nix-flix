@@ -9,6 +9,9 @@
   environment.systemPackages = with pkgs; [
     # 3d printing
     orca-slicer
+
+    # Music
+    id3v2
   ];
 
   networking.hostName = "six";
