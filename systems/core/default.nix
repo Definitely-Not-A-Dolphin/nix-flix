@@ -12,7 +12,7 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
-      "cfg80211.ieee80211_regdom=NL"
+      "cfg80211.ieee80211_regdom=US"
     ];
     loader = {
       systemd-boot.enable = true;
