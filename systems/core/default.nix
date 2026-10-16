@@ -47,6 +47,7 @@
     zip
 
     # User Core
+    bitwarden-desktop
     kdePackages.dolphin
     firefox
     fuzzel

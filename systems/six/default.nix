@@ -12,6 +12,7 @@
 
     # Music
     id3v2
+    bandcampsync
   ];
 
   networking.hostName = "six";
