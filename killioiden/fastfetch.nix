@@ -145,7 +145,10 @@
             type = "custom";
             format = "  ${codes.grey}};";
           }
-          "break"
+          {
+            type = "custom";
+            format = "${codes.grey}};";
+          }
         ];
     };
   };

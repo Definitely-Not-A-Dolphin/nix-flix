@@ -47,16 +47,17 @@
     zip
 
     # User Core
-    bitwarden-desktop
     kdePackages.dolphin
     firefox
     fuzzel
     kdePackages.okular
 
     # User other
+    bitwarden-desktop
     spotify
 
     # Gaming
+    dolphin-emu
     r2modman
     prismlauncher
     steam
