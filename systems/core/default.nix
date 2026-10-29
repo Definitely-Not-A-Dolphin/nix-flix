@@ -9,6 +9,9 @@
     ./services.nix
   ];
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  nix.settings.extra-platforms = [ "aarch64-linux" ];
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
