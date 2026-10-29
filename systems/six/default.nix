@@ -6,6 +6,9 @@
     ../../modules/default.nix
   ];
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  nix.settings.extra-platforms = [ "aarch64-linux" ];
+
   environment.systemPackages = with pkgs; [
     # 3d printing
     orca-slicer
