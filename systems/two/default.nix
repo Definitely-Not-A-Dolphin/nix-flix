@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hardware-configuration.nix
-    ../core/default.nix
-    ../../modules/default.nix
+    ../core
   ];
 
   environment.systemPackages = with pkgs; [

@@ -1,10 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [
-    ./hardware-configuration.nix
-    ../core/default.nix
-    ../../modules/default.nix
-  ];
+  imports = [ ../core ];
 
   environment.systemPackages = with pkgs; [
     # 3d printing

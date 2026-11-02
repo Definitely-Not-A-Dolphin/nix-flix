@@ -1,18 +1,17 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../killioiden/default.nix
-    ../../modules/default.nix
+    ../../killioiden
+    ../../modules
+    /etc/nixos/hardware.nix
     ./fonts.nix
     ./locale.nix
     ./sddm.nix
     ./services.nix
   ];
 
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  nix.settings.extra-platforms = [ "aarch64-linux" ];
-
   boot = {
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "cfg80211.ieee80211_regdom=US"
@@ -102,8 +101,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    extra-platforms = [ "aarch64-linux" ];
+  };
 }

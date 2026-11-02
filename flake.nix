@@ -30,14 +30,14 @@
       nixosConfigurations = {
         six = nixpkgs.lib.nixosSystem {
           modules = [
-            ./systems/six/default.nix
+            ./systems/six
           ];
 
           specialArgs = { inherit inputs; };
         };
         two = nixpkgs.lib.nixosSystem {
           modules = [
-            ./systems/two/default.nix
+            ./systems/two
           ];
 
           specialArgs = { inherit inputs; };
