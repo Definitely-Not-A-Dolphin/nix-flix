@@ -93,6 +93,7 @@
     cmatrix
     fastfetch
     microfetch
+    starship
   ];
 
   hardware.bluetooth.enable = true;

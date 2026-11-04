@@ -10,25 +10,22 @@
       };
       colors =
         let
-          colors = {
-            dark-black = "0d0d0dff";
-            black = "1a1a1aff";
-            gray = "808080ff";
-            white = "eaeaeaff";
-            light-blue = "00aaffff";
-            blue = "0080ffff";
-          };
+          dark-black = "0d0d0dff";
+          black = "1a1a1aff";
+          white = "eaeaeaff";
+          light-blue = "00aaffff";
+          blue = "0080ffff";
         in
         {
-          border = colors.dark-black;
-          background = colors.black;
-          text = colors.white;
-          match = colors.light-blue;
-          message = colors.blue;
-          input = colors.blue;
-          selection-match = colors.blue;
-          selection-text = colors.blue;
-          selection = colors.black;
+          border = dark-black;
+          background = black;
+          text = white;
+          match = light-blue;
+          message = blue;
+          input = blue;
+          selection-match = blue;
+          selection-text = blue;
+          selection = black;
         };
     };
   };

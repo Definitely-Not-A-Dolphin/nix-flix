@@ -29,7 +29,6 @@
           };
         in
         [
-          "break"
           {
             type = "custom";
             format = "${codes.grey}{{";

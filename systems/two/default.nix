@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [
-    ../core
-  ];
+  imports = [ ../core ];
 
   environment.systemPackages = with pkgs; [
     # Gaming
