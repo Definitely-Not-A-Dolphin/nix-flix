@@ -3,7 +3,7 @@
   imports = [
     ../../killioiden
     ../../modules
-    /etc/nixos/hardware.nix
+    /etc/nixos/hardware-configuration.nix
     ./fonts.nix
     ./locale.nix
     ./sddm.nix
@@ -93,7 +93,6 @@
     cmatrix
     fastfetch
     microfetch
-    starship
   ];
 
   hardware.bluetooth.enable = true;
